@@ -1,6 +1,12 @@
-const confirmButton = document.querySelector('#confirm'); 
-const itemList = document.querySelector('#item-list'); 
+const newButton = document.querySelector('#new-btn'); 
+//const itemList = document.querySelector('#item-list'); 
 
+const newPost = (event) => {
+  event.preventDefault(); 
+
+  document.location.replace('/create'); 
+}
+/*
 const confirmOrder = async() => {
   // need to save the order as "Completed" status. 
   // update the stock for those product items in the order. 
@@ -55,6 +61,6 @@ const deleteItem = async(event) => {
     }
   }
 }
-
-confirmButton.addEventListener('click', confirmOrder); 
-itemList.addEventListener('click', deleteItem); 
+*/
+newButton.addEventListener('click', newPost); 
+//itemList.addEventListener('click', deleteItem); 

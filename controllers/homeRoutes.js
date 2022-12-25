@@ -56,4 +56,18 @@ router.get('/login', (req, res) => {
   res.render('login', {page_title: "The Tech Blog"});
 });
 
+router.get('/create', async (req, res) => {  
+  try {
+    // render create post page
+    res.render('newpost', {
+      logged_in: req.session.logged_in,
+      user_id: req.session.user_id, 
+      user_name: req.session.user_name,
+      page_title: "My Dashboard", 
+    }); 
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
