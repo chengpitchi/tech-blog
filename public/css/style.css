@@ -171,10 +171,6 @@ i{
     font-size: 150%;
 }
 
-#delete-btn {
-    display: none; 
-}
-
 /* responsive styles */
 @media screen and (max-width: 985px) {  
     #detail-card {
