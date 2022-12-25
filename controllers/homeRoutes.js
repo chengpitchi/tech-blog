@@ -47,6 +47,26 @@ router.get('/dashboard/:id', async (req, res) => {
   }
 });
 
+router.get('/editpost/:id', async (req, res) => {  
+  try {
+    // get post item
+    const postData = await Post.findByPk(req.params.id); 
+
+    const post = postData.get({ plain: true }); 
+    
+    // render edit post page
+    res.render('editpost', {
+      post, 
+      logged_in: req.session.logged_in,
+      user_id: req.session.user_id, 
+      user_name: req.session.user_name,
+      page_title: "My Dashboard", 
+    }); 
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
     res.redirect('/');

@@ -1,4 +1,5 @@
 const newButton = document.querySelector('#new-btn'); 
+const itemContainer = document.querySelector('.container'); 
 //const itemList = document.querySelector('#item-list'); 
 
 const newPost = (event) => {
@@ -46,21 +47,15 @@ Comic World Ltd`
     document.location.replace('/confirm'); 
   }
 }
-
-const deleteItem = async(event) => {
+*/
+const editPost = (event) => {
   event.preventDefault(); 
   const itemClicked = event.target; 
 
-  if (itemClicked.id == "delete-button") {
-    const response = await fetch(`/api/orderItems/${itemClicked.dataset.id}`, {
-      method: 'DELETE'
-    })
-
-    if (response.ok) {
-      document.location.replace(`/api/orders/${document.querySelector('#order-count').dataset.orderid}`); 
-    }
+  if (itemClicked.id == "title-text") {
+    document.location.replace(`/editpost/${itemClicked.dataset.id}`); 
   }
 }
-*/
+
 newButton.addEventListener('click', newPost); 
-//itemList.addEventListener('click', deleteItem); 
+itemContainer.addEventListener('click', editPost); 

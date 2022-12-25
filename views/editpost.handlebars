@@ -5,22 +5,24 @@
         <h2 id="title-text">Edit Post</h2>
       </div>
 
-      <form class="form post-form" id="post-content">
+      <form class="form post-form" id="post-content" data-id="{{post.id}}">
         <div class="form-group">
           <label for="title" class="form-label">Title</label>
-          <input class="form-input" type="text" id="title" />
+          <input class="form-input" type="text" id="title" value="{{post.title}}"/>
         </div>
         <div class="form-group">
           <label for="content" class="form-label" >Content</label>
-          <textarea class="form-input" type="text" id="content"></textarea>
+          <textarea class="form-input" type="text" id="content">{{post.content}}</textarea>
         </div>
         <div class="form-group">
           <button class="btn" type="submit" id="submit-btn" >Update Post</button>
         </div>
         <div class="form-group">
-          <button class="btn" type="submit" id="delete-btn" >Delete</button>
+          <button class="btn" id="delete-btn" >Delete</button>
         </div>
       </form>
     </div>
   </div>
 </main>
+
+<script src="/js/editpost.js"></script>
