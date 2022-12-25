@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.1.3/flatly/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+    <link href="/css/jass.css" rel="stylesheet" />
+    <link href="/css/style.css" rel="stylesheet" />
+    <title>The Tech Blog</title>
+</head>
+
+<body>
+    <header class="display-flex justify-space-between align-center p-2">
+        <nav>
+            <a href="/" class="nav-item" id="checkout">
+                <span class="item-text">Home</span>
+            </a>
+            <a href="/dashboard/{{user_id}}" class="nav-item" id="checkout">
+                <span class="item-text">Dashboard</span>
+            </a>
+
+            {{#if logged_in}}
+                <a href="#" class="nav-item" data-userid="{{user_id}}" data-user="{{user_name}}" id="logout">
+                    <span class="item-text">Logout</span>
+                </a>
+            {{else}}
+                <a href="/login" class="nav-item" id="login">
+                    <span class="item-text">Login</span>
+                </a>
+            {{/if}}
+
+            <h1>{{page_title}}</h1>
+        </nav>
+    </header>
+
+    {{{body}}}
+
+    {{#if logged_in}}
+        <script src="/js/logout.js"></script>
+    {{/if}}
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

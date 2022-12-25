@@ -1,0 +1,15 @@
+<main class="container container-fluid mt-5" id="item-container">
+    {{#each posts as |post|}}
+        <section id="post-item">
+            <div id="post-title" class="display-flex justify-space-between align-center">
+                <h2 id="title-text" data-id={{id}}>{{title}}</h2>
+                <p id="posted-by">Posted by {{user.name}} on {{format_date createdAt}}</p>
+            </div>
+            <div id="post-content">
+                <p id="content-text">{{content}}</p>
+            </div>
+        </section>
+    {{/each}}
+</main>
+
+<script src="/js/homepage.js"></script>
