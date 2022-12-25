@@ -55,7 +55,7 @@ nav{
 }
 
 i{
-    padding-left: 2%; 
+    padding-right: 4%; 
 }
 
 .container {
@@ -99,71 +99,12 @@ i{
 .btn {
     background-color: var(--theme-color-1); 
     color: var(--theme-color-2);
-    border-radius: 2px;
+    border-radius: 8px;
 }
 
 .btn:hover {
     background-color: var(--theme-color-3);
     color: var(--theme-color-4);
-}
-
-/* style for product details page */
-#product-detail {
-    display: flex; 
-}
-
-#detail-card {
-    height: auto; 
-    width: 22%; 
-    margin: 4%; 
-}
-
-#detail-content {
-    width: 37%; 
-    margin: 4%;
-}
-
-#detail-title {
-    margin: 2% 0%; 
-}
-
-#detail-content p {
-    font-size: 100%; 
-    line-height: 1.2;
-}
-
-#desc-box {
-    border: 2px solid var(--theme-color-2); 
-    padding: 2%; 
-    border-radius: 5px;
-    box-shadow: 3px 2px 1px 1px var(--theme-color-3);
-}
-
-#review-title{
-    margin-left: 4%;
-}
-
-#review-content {
-    width: 60%; 
-    margin: 0% 4% 2% 4%;
-    border: 2px solid var(--theme-color-2); 
-    padding: 1.5%; 
-    border-radius: 5px;
-    box-shadow: 3px 2px 1px 1px var(--theme-color-3);
-}
-
-#review-item{
-    margin: 1%;  
-    border-bottom: 1px solid var(--theme-color-4);
-}
-
-#add-review-box{
-    width: 60%; 
-    margin-left: 4%; 
-}
-
-#review-text {
-    margin: 3% 0%; 
 }
 
 /* styles for login page */
@@ -183,12 +124,55 @@ i{
     font-size: 150%;
     margin-top: 1%;
     width: 100%; 
-    border-right: 5px;
 }
 
 #change-text:hover {
     cursor: pointer;
     color: blue; 
+    border: 2px solid var(--theme-color-1); 
+}
+
+/* styles for dashboard page */
+.dashboard-item {
+    border-radius: 8px;
+    margin-bottom: 2%;
+}
+
+.post-form {
+    padding: 3%;
+}
+
+.post-form .form-label {
+    font-size: 150%; 
+}
+
+.post-form .form-input {
+    font-size: 150%;
+}
+
+.post-form .btn {
+    font-size: 150%;
+    margin-top: 1%;
+    width: 100%; 
+}
+
+.new-post {
+    margin-top: auto;
+    margin-bottom: 3%;
+    width: 79%; 
+}
+
+.new-post .form-group {
+    display: flex; 
+    justify-content: center;
+}
+
+#new-btn {
+    font-size: 150%;
+}
+
+#delete-btn {
+    display: none; 
 }
 
 /* responsive styles */

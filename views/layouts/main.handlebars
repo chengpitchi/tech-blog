@@ -19,15 +19,20 @@
             <a href="/" class="nav-item" id="checkout">
                 <span class="item-text">Home</span>
             </a>
-            <a href="/dashboard/{{user_id}}" class="nav-item" id="checkout">
-                <span class="item-text">Dashboard</span>
-            </a>
 
             {{#if logged_in}}
+                <a href="/dashboard/{{user_id}}" class="nav-item" id="checkout">
+                    <span class="item-text">Dashboard</span>
+                </a>
+
                 <a href="#" class="nav-item" data-userid="{{user_id}}" data-user="{{user_name}}" id="logout">
                     <span class="item-text">Logout</span>
                 </a>
             {{else}}
+                <a href="/login" class="nav-item" id="checkout">
+                    <span class="item-text">Dashboard</span>
+                </a>
+
                 <a href="/login" class="nav-item" id="login">
                     <span class="item-text">Login</span>
                 </a>

@@ -32,11 +32,14 @@ const loginFormHandler = async (event) => {
       });
 
       if (response.ok) {
-        // If successful, redirect the browser to the home page
-        document.location.replace('/');
+        // If successful, redirect the browser to the dashboard page
+        const result = response.json()
+            .then((data) => {
+              document.location.replace(`/dashboard/${data.id}`); 
+            }); 
       } else {
         alert(response.statusText);
-      }
+      } 
     } else {
       console.log(name, password); 
       const response = await fetch('/api/users', {
@@ -45,9 +48,13 @@ const loginFormHandler = async (event) => {
         headers: { 'Content-Type': 'application/json' },
       });
   
+      console.log(response); 
   
       if (response.ok) {
-        document.location.replace('/');
+        const result = response.json()
+            .then((data) => {
+              document.location.replace(`/dashboard/${data.id}`); 
+            }); 
       } else {
         alert(response.statusText);
       }  
