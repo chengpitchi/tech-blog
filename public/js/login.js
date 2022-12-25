@@ -1,19 +1,33 @@
+const changeText = document.querySelector('#change-text'); 
+const submitBtn = document.querySelector('#submit-btn'); 
+
+const switchForm = (event) => {
+  event.preventDefault(); 
+
+  if (changeText.textContent === "Login Instead") {
+    document.querySelector('#title-text').textContent = "Login"; 
+    submitBtn.textContent = "Login"; 
+    changeText.textContent = "Sign Up Instead"; 
+  } else {
+    document.querySelector('#title-text').textContent = "Sign Up"; 
+    submitBtn.textContent = "Sign Up"; 
+    changeText.textContent = "Login Instead"; 
+  }
+}
+
 const loginFormHandler = async (event) => {
-    event.preventDefault();
-  
-    // Collect values from the login form
-    const email = document.querySelector('#email-login').value.trim();
-    const password = document.querySelector('#password-login').value.trim();
-  
-    if (email && password) {
+  event.preventDefault();
+
+  // Collect values from the login form
+  const name = document.querySelector('#username-login').value.trim();
+  const password = document.querySelector('#password-login').value.trim();
+
+  if (name && password) {
+    if (submitBtn.textContent === "Login") {
       // Send a POST request to the API endpoint
       const response = await fetch('/api/users/login', {
         method: 'POST',
-        body: JSON.stringify({ user: { email, password }, 
-                                order: {
-                                  order_ref: '', 
-                                  status: 'P', 
-                                  user_id: 1}}),
+        body: JSON.stringify( { name, password } ),
         headers: { 'Content-Type': 'application/json' },
       });
 
@@ -23,39 +37,26 @@ const loginFormHandler = async (event) => {
       } else {
         alert(response.statusText);
       }
-    }
-  };
-  
-  const signupFormHandler = async (event) => {
-    event.preventDefault();
-  
-    const name = document.querySelector('#name-signup').value.trim();
-    const email = document.querySelector('#email-signup').value.trim();
-    const password = document.querySelector('#password-signup').value.trim();
-  
-    if (name && email && password) {
+    } else {
+      console.log(name, password); 
       const response = await fetch('/api/users', {
         method: 'POST',
-        body: JSON.stringify({user: { name, email, password }, 
-                              order: {order_ref: '', 
-                                        status: 'P', 
-                                        user_id: 1}}),
+        body: JSON.stringify({ name, password }),
         headers: { 'Content-Type': 'application/json' },
       });
-
-
+  
+  
       if (response.ok) {
         document.location.replace('/');
       } else {
         alert(response.statusText);
-      }
+      }  
     }
-  };
-  
-  document
-    .querySelector('.login-form')
-    .addEventListener('submit', loginFormHandler);
-  
-  document
-    .querySelector('.signup-form')
-    .addEventListener('submit', signupFormHandler);
+  } 
+};
+
+document
+  .querySelector('.login-form')
+  .addEventListener('submit', loginFormHandler);
+
+changeText.addEventListener('click', switchForm); 

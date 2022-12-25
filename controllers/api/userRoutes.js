@@ -5,8 +5,6 @@ const sequelize = require('../../config/connection');
 
 router.post('/', async (req, res) => {
     try {
-        console.log("user"); 
-        console.log(req.body); 
         const userData = await User.create(req.body);
 
         req.session.save(() => {
@@ -23,7 +21,7 @@ router.post('/', async (req, res) => {
 
 router.post('/login', async (req, res) => {
     try {
-      const userData = await User.findOne({ where: { email: req.body.name } });
+      const userData = await User.findOne({ where: { name: req.body.name } });
   
       if (!userData) {
         res

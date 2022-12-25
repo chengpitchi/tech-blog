@@ -1,40 +1,24 @@
 <main class="container container-fluid mt-5">
   <div class="row">
-    <div class="col-md-6">
-      <h2>Login</h2>
+    <div class="col-md-12">
+      <div id="post-title">
+        <h2 id="title-text">Login</h2>
+      </div>
 
-      <form class="form login-form">
+      <form class="form login-form" id="post-content">
         <div class="form-group">
-          <label for="email-login">email:</label>
-          <input class="form-input" type="text" id="email-login" />
+          <label for="username-login" class="form-label">Username</label>
+          <input class="form-input" type="text" id="username-login" />
         </div>
         <div class="form-group">
-          <label for="password-login">password:</label>
+          <label for="password-login" class="form-label" >Password</label>
           <input class="form-input" type="password" id="password-login" />
         </div>
         <div class="form-group">
-          <button class="btn" type="submit">Login</button>
-        </div>
-      </form>
-    </div>
-    <div class="col-md-6">
-      <h2>Signup</h2>
-
-      <form class="form signup-form">
-        <div class="form-group">
-          <label for="name-signup">name:</label>
-          <input class="form-input" type="text" id="name-signup" />
+          <button class="btn" type="submit" id="submit-btn" >Login</button>
         </div>
         <div class="form-group">
-          <label for="email-signup">email:</label>
-          <input class="form-input" type="text" id="email-signup" />
-        </div>
-        <div class="form-group">
-          <label for="password-signup">password:</label>
-          <input class="form-input" type="password" id="password-signup" />
-        </div>
-        <div class="form-group">
-          <button class="btn" type="submit">Signup</button>
+          <h4 id="change-text" >Sign Up Instead</h4>
         </div>
       </form>
     </div>

@@ -24,7 +24,7 @@ header {
 }
 
 h1 {
-    margin: 1.5% 3%;
+    margin: 3% 4%;
     padding: 0.5% 2%;  
     font-size: 250%;
     width:fit-content; 
@@ -45,9 +45,9 @@ a:hover {
 }
 
 nav{
-    font-size: 140%;
-    font-weight: bolder;
-    width: 800px; 
+    font-size: 160%;
+    width: 1000px; 
+    margin-top: 1.5%; 
 }
 
 .nav-item{
@@ -70,7 +70,8 @@ i{
     display: flex; 
 }
 
-#title-text:hover {
+#post-item #post-title #title-text:hover {
+    cursor: pointer;
     color: var(--theme-color-2); 
 }
 
@@ -86,7 +87,7 @@ i{
 }
 
 #post-content {
-    border: 3px solid var(--theme-color-1); 
+    border: 5px solid var(--theme-color-1); 
     margin-bottom: 3%; 
 }
 
@@ -102,6 +103,7 @@ i{
 }
 
 .btn:hover {
+    background-color: var(--theme-color-3);
     color: var(--theme-color-4);
 }
 
@@ -164,10 +166,29 @@ i{
     margin: 3% 0%; 
 }
 
-/* styles for checkout page */
-#quantity-box {
-    width:40px;
-    height:42px;
+/* styles for login page */
+.login-form {
+    padding: 3%;
+}
+
+.login-form .form-label {
+    font-size: 150%; 
+}
+
+.login-form .form-input {
+    font-size: 150%;
+}
+
+.login-form .btn {
+    font-size: 150%;
+    margin-top: 1%;
+    width: 100%; 
+    border-right: 5px;
+}
+
+#change-text:hover {
+    cursor: pointer;
+    color: blue; 
 }
 
 /* responsive styles */
