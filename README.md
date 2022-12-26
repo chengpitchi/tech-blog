@@ -1,10 +1,22 @@
-# 14 Model-View-Controller (MVC): Tech Blog
+# The Tech Blog
 
-## Your Task
+[![made-with-javascript](https://img.shields.io/badge/Made%20with-JavaScript-1f425f.svg)](https://www.javascript.com)
 
-Writing about tech can be just as important as making it. Developers spend plenty of time creating new applications and debugging existing codebases, but most developers also spend at least some of their time reading and writing about technical concepts, recent advancements, and new technologies. A simple Google search for any concept covered in this course returns thousands of think pieces and tutorials from developers of all skill levels!
+## Table of Contents
+* [Description](#description)
+* [User Story](#user-story)
+* [Acceptance Criteria](#acceptance-criteria)
+* [Database Schema](#database-schema)
+* [Installation](#installation)
+* [Testing](#testing)
+* [Screenshot](#screenshot)
+* [Live URL](#live-url)
+* [Contributors](#contributors)
+* [Questions](#questions)
+* [License](#license)
 
-Your task this week is to build a CMS-style blog site similar to a Wordpress site, where developers can publish their blog posts and comment on other developers’ posts as well. You’ll build this site completely from scratch and deploy it to Heroku. Your app will follow the MVC paradigm in its architectural structure, using Handlebars.js as the templating language, Sequelize as the ORM, and the express-session npm package for authentication.
+## Description
+This tech blog is a CMS-style blog site similar to a Wordpress site, where developers can publish their blog posts and comment on other developers’ posts as well.
 
 ## User Story
 
@@ -52,81 +64,51 @@ WHEN I am idle on the site for more than a set time
 THEN I am able to view comments but I am prompted to log in again before I can add, update, or delete comments
 ```
 
-## Mock-Up
+## Database Schema
+![DatabaseSchema](./public/images/model.png)
 
-The following animation demonstrates the application functionality:
+## Installation
 
-![Animation cycles through signing into the app, clicking on buttons, and updating blog posts.](./Assets/14-mvc-homework-demo-01.gif) 
+1. To setup the application in local, run "npm i" to install the below packages. 
+    * bcryptjs
+    * connect-session-sequelize
+    * dotenv
+    * express
+    * express-handlebars
+    * express-session
+    * mysql2
+    * sequelize
 
-## Getting Started
+2. Under the repository folder, open the terminal and login mySQL CLI.  Execute script by issuing command "source db/schema.sql" to create the database. 
 
-Your application’s folder structure must follow the Model-View-Controller paradigm. You’ll need to use the [express-handlebars](https://www.npmjs.com/package/express-handlebars) package to implement Handlebars.js for your Views, use the [MySQL2](https://www.npmjs.com/package/mysql2) and [Sequelize](https://www.npmjs.com/package/sequelize) packages to connect to a MySQL database for your Models, and create an Express.js API for your Controllers.
+3. Quit the mySQL CLI, run "npm start" to load the model to the database. 
 
-You’ll also need the [dotenv package](https://www.npmjs.com/package/dotenv) to use environment variables, the [bcrypt package](https://www.npmjs.com/package/bcrypt) to hash passwords, and the [express-session](https://www.npmjs.com/package/express-session) and [connect-session-sequelize](https://www.npmjs.com/package/connect-session-sequelize) packages to add authentication.
+## Testing
+> APIs were tested using Insomnia: https://insomnia.rest/ 
 
-**Note**: The [express-session](https://www.npmjs.com/package/express-session) package stores the session data on the client in a cookie. When you are idle on the site for more than a set time, the cookie will expire and you will be required to log in again to start a new session. This is the default behavior and you do not have to do anything to your application other than implement the npm package.
+> Application is tested by manual test scripts through the Chrome browser.  
 
-## Grading Requirements
+## Screenshot
+![This is the first solution screenshot for the tech blog](./public/images/tech-blog-1.png)
 
-> **Note**: If a Challenge assignment submission is marked as “0”, it is considered incomplete and will not count towards your graduation requirements. Examples of incomplete submissions include the following:
->
-> * A repository that has no code
->
-> * A repository that includes a unique name but nothing else
->
-> * A repository that includes only a README file but nothing else
->
-> * A repository that only includes starter code
+![This is the second solution screenshot for the tech blog](./public/images/tech-blog-2.png)
 
-This Challenge is graded based on the following criteria:
+![This is the third solution screenshot for the tech blog](./public/images/tech-blog-3.png)
 
-### Technical Acceptance Criteria: 40%
+![This is the fourth solution screenshot for the tech blog](./public/images/tech-blog-4.png)
 
-* Satisfies all of the preceding acceptance criteria plus the following:
+![This is the fifth solution screenshot for the tech blog](./public/images/tech-blog-5.png)
 
-    * Application’s folder structure follows the Model-View-Controller paradigm.
+![This is the sixth solution screenshot for the tech blog](./public/images/tech-blog-6.png)
 
-    * Uses the [express-handlebars](https://www.npmjs.com/package/express-handlebars) package to implement Handlebars.js for your Views.
+## Live URL 
+https://tech-blog-99.herokuapp.com/
 
-    * Application must be deployed to Heroku.
+## Contributors
+* GitHub: [chengpitchi](https://github.com/chengpitchi)
 
-### Deployment: 32%
+## Questions
+Please send your questions to chengpitchi@yahoo.com or visit [github/chengpitchi](https://github.com/chengpitchi).
 
-* Application deployed at live URL.
-
-* Application loads with no errors.
-
-* Application GitHub URL submitted.
-
-* GitHub repository contains application code.
-
-### Application Quality: 15%
-
-* User experience is intuitive and easy to navigate.
-
-* User interface style is clean and polished.
-
-* Application resembles the mock-up functionality provided in the Challenge instructions.
-
-### Repository Quality: 13%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains quality readme file with description, screenshot, and link to deployed application.
-
-## Review
-
-You are required to submit BOTH of the following for review:
-
-* The URL of the functional, deployed application.
-
-* The URL of the GitHub repository, with a unique name and a readme describing the project.
-
----
-© 2022 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+## License
+N/A
