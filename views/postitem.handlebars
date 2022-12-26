@@ -1,40 +1,51 @@
 <main class="container container-fluid mt-5">
-    <div id="product-detail">
-        <div class="card" id="detail-card"><img data-id="{{product.id}}" src="{{product.image_url}}"/></div>
-        <div id="detail-content">
-            <h2 id="detail-title">{{product.product_name}}</h2>
-            <p>Category:    {{product.category.category_name}}</p>
-            <p>Country of Origin:   {{product.country}}</p>
-            <p>Release Date: {{product.release_date}}</p>
-            <h5>Product Description: </h5>
-            <p id="desc-box">{{product.description}}</p>
-            {{#if product.stock}}
-                <h6 data-price="{{product.price}}" id="price">Price: AUD{{product.price}}</h6>
-                <button class="btn" data-productid="{{product.id}}" id="add-btn">Add To Cart<i class="fas fa-shopping-cart"></i></button>
-            {{else}}
-                <h6 id="add-btn">Out of Stock</h6>
-            {{/if}}
-        </div> 
-    </div>
+    <section id="post-details">
+        <div id="post-title" class="display-flex justify-space-between align-center">
+            <h2 id="title-text" data-id={{post.id}}>{{post.title}}</h2>
+            <p id="posted-by">Posted by {{post.user.name}} on {{format_date post.createdAt}}</p>
+        </div>
+        <div id="post-content">
+            <p id="content-text">{{post.content}}</p>
+        </div>
+    </section>
 
-    <h3 id="review-title">Reviews</h3>
-    <div class="container" data-count="{{product.reviewCount}}" id="review-content">
-        {{#if product.reviewCount}}
-            {{#each product.reviews as |review|}}
-                <div id="review-item">
-                    <p>{{review_text}}</p>
-                    <p>- written by {{user.name}} on {{format_datetime createdAt}}</p>
+    <section class="comment-items">
+        <div id="post-title">
+            <h2 id="title-text">Comments</h2>
+        </div>
+        {{#if post.commentCount}}
+            {{#each post.comments as |comment|}}
+                <div class="comment-content">
+                    <p id="comment-text">{{comment_text}}</p>
+                    <p id="comment-text">- {{user.name}}, {{format_date createdAt}}</p>
                 </div>
             {{/each}}
         {{else}}
-            <p>No review for this product.</p>
+            <p id="comment-text">No comments for this post.</p>
         {{/if}}
-    </div>
+    </section>
 
-    <div class="mb-3" id="add-review-box">
-        <textarea class="form-control" id="review-text" rows="3" placeholder="Write your review..."></textarea>
-        <button class="btn" data-productid="{{product.id}}" data-userid="{{user_id}}" id="add-review-btn">Add Review<i class="fas fa-edit"></i></button>
-    </div>
+    {{#if logged_in}}
+        <div class="row comment-section">
+            <div class="col-md-12">
+            <div id="post-title">
+                <h2 id="title-text">Add Comment</h2>
+            </div>
+
+            <form class="form comment-form" id="post-content">
+                <div class="form-group">
+                    <label for="comment" class="form-label" >Comment</label>
+                    <textarea class="form-input" type="text" id="comment" placeholder="Add comments here..."></textarea>
+                </div>
+                <div class="form-group">
+                <button class="btn" type="submit" id="submit-btn" >Submit</button>
+                </div>
+            </form>
+            </div>
+        </div>
+    {{else}}
+        <span id="submit-btn"></span>
+    {{/if}}
 </main>
 
-<script src="/js/productItem.js"></script>
+<script src="/js/postitem.js"></script>

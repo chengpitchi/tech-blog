@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Post, User } = require('../models');
-//const { Op } = require('sequelize'); 
 
 router.get('/', async (req, res) => {  
   try {
@@ -26,7 +25,7 @@ router.get('/', async (req, res) => {
 
 router.get('/dashboard/:id', async (req, res) => {  
   try {
-    // get post items
+    // get user's own post items 
     const postData = await Post.findAll({ 
       where: { user_id: req.params.id }, 
       order: [['updated_at', 'DESC']], 
@@ -49,7 +48,7 @@ router.get('/dashboard/:id', async (req, res) => {
 
 router.get('/editpost/:id', async (req, res) => {  
   try {
-    // get post item
+    // get post item for editing 
     const postData = await Post.findByPk(req.params.id); 
 
     const post = postData.get({ plain: true }); 

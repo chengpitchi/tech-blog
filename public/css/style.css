@@ -171,80 +171,104 @@ i{
     font-size: 150%;
 }
 
-/* responsive styles */
-@media screen and (max-width: 985px) {  
-    #detail-card {
-        width: 32%; 
-    }
-
-    #detail-content {
-        width: 52%; 
-    }
-
-    #review-content {
-        width: 92%;
-    }
-
-    #add-review-box {
-        width: 92%; 
-    }
+/* styles for post item page */
+.comment-items {
+    border: 5px solid var(--theme-color-1); 
+    margin-bottom: 3%; 
 }
 
+.comment-content {
+    margin: 2%; 
+    border-bottom: 1px solid var(--theme-color-1);
+}
+
+#comment-text {
+    font-size: 130%;
+    padding: 0.5% 2%; 
+}
+
+.comment-form {
+    padding: 3%;
+}
+
+.comment-form .form-label {
+    font-size: 150%; 
+}
+
+.comment-form .form-input {
+    font-size: 150%;
+}
+
+.comment-form .btn {
+    font-size: 150%;
+    margin-top: 1%;
+    width: 100%; 
+}
+
+/* responsive styles */
 @media screen and (max-width: 767px) {
     h1 {
         margin: 2%; 
-        font-size: 200%;
-    }
-
-    .item-text{
-        display: none; 
-    }
-
-    #order-count{
-        font-size: 70%;
-        padding: 1.2% 5%; 
+        font-size: 150%;
     }
 
     nav{
-        width: 70px; 
+        font-size: 120%;
+        width: 760px; 
     }
 
-    #home-banner {
-        height: 200px; 
+    #title-text {
+        font-size: 130%;
     }
 
-    .card {
-        height: 290px; 
-        width: 190px; 
+    #posted-by {
+        font-size: 110%;
     }
 
-    .img-thumbnail {
-        height: 200px;
+    #content-text {
+        font-size: 100%;
     }
 
-    #checkout-desc{
-        display: none;
+    .login-form .form-label {
+        font-size: 120%; 
     }
+    
+    .login-form .form-input {
+        font-size: 120%;
+    }
+    
+    .login-form .btn {
+        font-size: 120%;
+    }  
+
+    .post-form .form-label {
+        font-size: 120%; 
+    }
+    
+    .post-form .form-input {
+        font-size: 120%;
+    }
+    
+    .post-form .btn {
+        font-size: 120%;
+    }
+
+    .comment-form .form-label {
+        font-size: 120%; 
+    }
+    
+    .comment-form .form-input {
+        font-size: 120%;
+    }
+    
+    .comment-form .btn {
+        font-size: 120%;
+    }    
 }
 
-@media screen and (max-width: 560px) {
-    #product-detail {
-        display: block; 
-    }
-
-    #detail-card {
-        width: 50%; 
-    }    
-    
-    #detail-content {
-        width: 92%; 
-    }
-
-    #review-content {
-        width: 92%;
-    }
-
-    #add-review-box {
-        width: 92%; 
+@media screen and (max-width: 360px) {
+    nav{
+        font-size: 100%;
+        width: 350px; 
     }
 }

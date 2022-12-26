@@ -4,7 +4,7 @@ const openPostItem = (event) => {
     let itemClicked = event.target; 
 
     if (itemClicked.id === "title-text") {
-        window.location.href = `/api/products/${itemClicked.dataset.id}`; 
+        window.location.href = `/api/posts/${itemClicked.dataset.id}`; 
     }
 }
 

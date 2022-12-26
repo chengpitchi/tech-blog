@@ -7,7 +7,18 @@ const withAuth = require('../../utils/auth');
 router.get('/:id', async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
-      include: [{ model: Comment, include: [ { model: User }] }], 
+      include: [{ model: User }, 
+                { model: Comment, include: [ { model: User }] }], 
+      attributes: {
+        include: [
+          [
+            sequelize.literal(
+              '(SELECT COUNT(*) FROM comment WHERE comment.post_id = post.id)'
+            ),
+            'commentCount',
+          ],
+        ],
+      },                   
     });
 
     if (!postData) {
@@ -16,12 +27,12 @@ router.get('/:id', async (req, res) => {
     }
 
     const post = postData.get({ plain: true });
-     
     res.render('postitem', {
       post, 
       logged_in: req.session.logged_in,
       user_id: req.session.user_id, 
       user_name: req.session.user_name, 
+      page_title: "The Tech Blog", 
     });
 } catch (err) {
     res.status(500).json(err);
